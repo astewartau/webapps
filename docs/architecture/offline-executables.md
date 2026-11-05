@@ -30,6 +30,7 @@ Paths in this table are relative to the repository root. Existing implementation
 
 | App | Useful batch operation | Existing code and next work |
 | --- | --- | --- |
+| `microscope-qc` | Bead PSF (FWHM) and field-illumination quality control, MetroloJ_QC definitions | The numerics are pure JavaScript in `apps/microscope-qc/src/core`; a Node command line could reuse them unchanged. No package yet. |
 | `calcium-imaging` | Two-photon movie preprocessing: motion correction, ROIs, ΔF/F and OASIS deconvolution | The pipeline is pure JavaScript in `apps/calcium-imaging/src/core`; a Node command line could reuse it unchanged. No package yet. |
 | `brainchop` | Browser TensorFlow.js segmentation | Six pinned tissue and atlas models; no command-line package. |
 | `samsrf` | pRF fit, reverse-correlation pRF and connective fields on GIfTI time series (SamSrf `SamSrfAnalysis`) | `exes/samsrf` (Rust core) and `packages/samsrf` (WebAssembly and the `samsrf` command line) are in progress; the app reaches them only through `apps/samsrf/src/engine.js`, which holds a placeholder until then. |
