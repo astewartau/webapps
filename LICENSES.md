@@ -28,6 +28,9 @@ for each app are recorded in `registry/apps.yml`.
 - `apps/stardist`: BSD-3-Clause (`apps/stardist/LICENSE`), as the StarDist 0.9.1 and CSBDeep 0.8.1 code it
   ports and the pretrained `2D_versatile_fluo` model it runs; attribution, and the Boost Software License of
   the bundled `clipper-lib`, in `apps/stardist/NOTICE`. The build ships both files at the app's root
+- `apps/lightsheet-atlas`: Apache-2.0 AND BSD-3-Clause: its cell detection (`src/detect.js`) ports cellfinder 1.10.1
+  (BSD-3-Clause, `apps/lightsheet-atlas/LICENSE-cellfinder`); attribution in `apps/lightsheet-atlas/NOTICE`, served with
+  the app as `THIRD_PARTY_NOTICES.txt`. The Allen CCFv3 atlas it downloads is under the Allen Institute terms of use
 - `packages/shoreline`: Apache-2.0 AND BSD-3-Clause (`packages/shoreline/LICENSE`,
   `packages/shoreline/NOTICE`); the WebAssembly build of `exes/dwi/shoreline`, whose 3dSHORE
   and topup displacement crates port QSIPrep and DIPY code (BSD-3-Clause)

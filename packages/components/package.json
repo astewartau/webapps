@@ -54,6 +54,7 @@
       "default": "./src/file-io/gradients.js"
     },
     "./file-io/mesh": "./src/file-io/mesh.js",
+    "./file-io/microscopy-stack": "./src/file-io/microscopy-stack.js",
     "./fetch": {
       "types": "./src/net/fetchWithRetry.d.ts",
       "default": "./src/net/fetchWithRetry.js"
@@ -132,6 +133,8 @@
     "node": ">=22"
   },
   "dependencies": {
+    "geotiff": "3.0.5",
+    "zarrita": "0.7.5",
     "zod": "^4.6.5"
   },
   "devDependencies": {
