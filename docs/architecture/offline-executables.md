@@ -30,6 +30,7 @@ Paths in this table are relative to the repository root. Existing implementation
 
 | App | Useful batch operation | Existing code and next work |
 | --- | --- | --- |
+| `histo2mri` | Histology section to MRI registration (Greedy NMI rigid, affine and deformable in the section plane, plane offset and tilt search) | The pipeline is pure JavaScript in `apps/histo2mri/src/core` with Greedy injected; `test/` runs it in Node on `@neurodesk/greedy/single`, so a command line could reuse it unchanged. No package yet. |
 | `calcium-imaging` | Two-photon movie preprocessing: motion correction, ROIs, ΔF/F and OASIS deconvolution | The pipeline is pure JavaScript in `apps/calcium-imaging/src/core`; a Node command line could reuse it unchanged. No package yet. |
 | `brainchop` | Browser TensorFlow.js segmentation | Six pinned tissue and atlas models; no command-line package. |
 | `samsrf` | pRF fit, reverse-correlation pRF and connective fields on GIfTI time series (SamSrf `SamSrfAnalysis`) | `exes/samsrf` (Rust core) and `packages/samsrf` (WebAssembly and the `samsrf` command line) are in progress; the app reaches them only through `apps/samsrf/src/engine.js`, which holds a placeholder until then. |
