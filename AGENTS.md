@@ -176,6 +176,12 @@ An app can set `ci.e2e_shards` to 2-4 in `registry/apps.yml`. The CPU browser jo
 - `e2e/expected.json` pins native ANTs 2.6.5 `DenoiseImage` on the example with one ITK thread (`scripts/native-reference.mjs`, Docker), and the browser tests must reproduce it byte for byte. Rerecord it after a module rebuild or an example change.
 - The radii stop at the largest pair checked against native (patch 2, search 3), and the shrink factor stays 1. The app has no command line of its own: the Standalone dialog lists the ANTs container (`registry/standalone-exceptions.json`).
 
+## structure-tensor
+
+- The numerics are `apps/structure-tensor/src/tensor.js`: pure, float64, run in a module worker (one per run, terminated on cancel) and under Node in the tests. Its kernels and borders are scipy.ndimage's on purpose: `validation/scipy-reference.py` writes `validation/reference.json`, the unit tests compare with it at 1e-9°, and the browser test compares the example's downloaded float32 maps with it. Regenerate the reference after any change to the kernels, the window or the maps.
+- OrientationJ is GPL-3.0: never copy its code. It is only an external check (`validation/orientationj/`); its recursive Gaussian window explains the 1.7° median difference on the example.
+- Angles use OrientationJ's convention: counterclockwise from +x with rows pointing down. TIFFs are shown upright through a NIfTI header whose y axis runs down the rows (`rasterHeader` in `src/io.js`). σ must be at least one voxel along every axis (`imageRefusal`), because thinner sampled derivative kernels lose gain and bias 3D angles.
+
 ## brainqcnet
 
 - The preprocessing, slice classification loop, summaries and CSV writers live in `packages/brainqcnet`; the app adds the UI, the ONNX Runtime Web worker (one per run, terminated on cancel) and the file names. Change numerics in the package only.
