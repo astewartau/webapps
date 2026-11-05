@@ -30,7 +30,9 @@ for each app are recorded in `registry/apps.yml`.
   the bundled `clipper-lib`, in `apps/stardist/NOTICE`. The build ships both files at the app's root
 - `apps/lightsheet-atlas`: Apache-2.0 AND BSD-3-Clause: its cell detection (`src/detect.js`) ports cellfinder 1.10.1
   (BSD-3-Clause, `apps/lightsheet-atlas/LICENSE-cellfinder`); attribution in `apps/lightsheet-atlas/NOTICE`, served with
-  the app as `THIRD_PARTY_NOTICES.txt`. The Allen CCFv3 atlas it downloads is under the Allen Institute terms of use
+  the app as `THIRD_PARTY_NOTICES.txt`. The Allen CCFv3 atlas it downloads, which both offline asset inventories
+  bundle, is for research and noncommercial use only under the Allen Institute terms of use; commercial
+  redistribution of an offline bundle containing it needs the Allen Institute's written permission
 - `packages/shoreline`: Apache-2.0 AND BSD-3-Clause (`packages/shoreline/LICENSE`,
   `packages/shoreline/NOTICE`); the WebAssembly build of `exes/dwi/shoreline`, whose 3dSHORE
   and topup displacement crates port QSIPrep and DIPY code (BSD-3-Clause)
