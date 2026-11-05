@@ -32,10 +32,10 @@ for each app are recorded in `registry/apps.yml`.
   ports and the pretrained `2D_versatile_fluo` model it runs; attribution, and the Boost Software License of
   the bundled `clipper-lib`, in `apps/stardist/NOTICE`. The build ships both files at the app's root
 - `packages/deconvolution`: MIT (`packages/deconvolution/LICENSE`); the WebAssembly build of
-  `exes/deconvolution` (MIT), statically linking RustFFT, RealFFT and libm (MIT), whose Bessel
-  functions carry the FreeBSD msun / Sun Microsystems notice (`packages/deconvolution/NOTICE`).
-  `apps/deconvolution` stages both files in its build under `licenses/`.
-- `packages/microscopy-tiff`: MIT (`packages/microscopy-tiff/LICENSE`); decodes with geotiff.js (MIT)
+  `exes/deconvolution` (MIT), statically linking RustFFT, RealFFT, libm and the other crates in
+  `packages/deconvolution/THIRD_PARTY_NOTICES.md` (generated from the Cargo lock with their licence
+  texts); libm's Bessel functions carry the FreeBSD msun / Sun Microsystems notice
+  (`packages/deconvolution/NOTICE`). `apps/deconvolution` stages these files in its build under `licenses/`.
 - `packages/shoreline`: Apache-2.0 AND BSD-3-Clause (`packages/shoreline/LICENSE`,
   `packages/shoreline/NOTICE`); the WebAssembly build of `exes/dwi/shoreline`, whose 3dSHORE
   and topup displacement crates port QSIPrep and DIPY code (BSD-3-Clause)
