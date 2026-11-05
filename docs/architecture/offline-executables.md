@@ -30,6 +30,7 @@ Paths in this table are relative to the repository root. Existing implementation
 
 | App | Useful batch operation | Existing code and next work |
 | --- | --- | --- |
+| `microsam` | Interactive 2D segmentation from point and box prompts (micro-sam `vit_t_lm`) | Interactive only: the embedding and decoder run in the app (`apps/microsam/src/worker.js`); micro-sam's own Python package is the command-line reference, so no command line is packaged. |
 | `brainchop` | Browser TensorFlow.js segmentation | Six pinned tissue and atlas models; no command-line package. |
 | `samsrf` | pRF fit, reverse-correlation pRF and connective fields on GIfTI time series (SamSrf `SamSrfAnalysis`) | `exes/samsrf` (Rust core) and `packages/samsrf` (WebAssembly and the `samsrf` command line) are in progress; the app reaches them only through `apps/samsrf/src/engine.js`, which holds a placeholder until then. |
 | `brainqcnet` | Artifact detection on one T1-weighted image (BrainQCNet) | The authors publish the BIDS app container `garciaml/brainqcnetcpu`; the Standalone dialog lists version 1.0.1, pinned by digest, whose tables the app reproduces, so no separate command line is packaged. |
